@@ -81,8 +81,8 @@ class CalcArrayPointsUnitTests: XCTestCase {
     // 
     
     func testPoints() {
-        let testPoint1 = (2, 6)
-        let testPoint2 = (5, 4)
+		let testPoint1 : (Int?, Int?) = (2, 6)
+        let testPoint2 : (Int?, Int?) = (5, 4)
         let dictionaryIntTest1 = [
                 "x" : 2,
                 "y" : 6
@@ -101,10 +101,10 @@ class CalcArrayPointsUnitTests: XCTestCase {
         ]
         
         let addPointResult = add(p1: testPoint1, p2: testPoint2)
-        XCTAssert(addPointResult.0 == 7 && addPointResult.1 == 10)
+        XCTAssert(addPointResult!.0 == 7 && addPointResult!.1 == 10)
         
         let subtractPointResult = subtract(p1: testPoint1, p2: testPoint2)
-        XCTAssert(subtractPointResult.0 == -3 && subtractPointResult.1 == 2)
+        XCTAssert(subtractPointResult!.0 == -3 && subtractPointResult!.1 == 2)
         
         let addPointDictionaryResult = add(p1: dictionaryIntTest1, p2: dictionaryIntTest2)!
         XCTAssert(addPointDictionaryResult["x"]! == 7 && addPointDictionaryResult["y"]! == 10)
